@@ -1,0 +1,15 @@
+#!/bin/bash -x
+cd ~
+export http_proxy=http://194.145.60.1:9400
+export https_proxy=$http_proxy
+sudo -E apt install git
+git config --global credential.helper store
+if [ -d chp ]; then
+  cd chp
+  git pull
+else
+  git clone https://shsamg.visualstudio.com/chp/_git/chp
+  cd chp
+fi
+git checkout testcontroller
+bash -x infra/testcontroller/install.sh
