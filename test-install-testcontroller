@@ -1,6 +1,6 @@
 #!/bin/bash -x
 cd ~
-export https_proxy=$http_proxy
+export http_proxy=$https_proxy
 sudo -E apt install -y git
 git config --global credential.helper store
 if [ -d chp ]; then
