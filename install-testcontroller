@@ -2,7 +2,7 @@
 cd ~
 export http_proxy=http://194.145.60.1:9400
 export https_proxy=$http_proxy
-sudo -E apt install git
+sudo -E apt -y install git
 git config --global credential.helper store
 if [ -d chp ]; then
   cd chp
